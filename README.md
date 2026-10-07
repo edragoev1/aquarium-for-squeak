@@ -1,5 +1,11 @@
 # Aquarium for Squeak
 
+**Download, with Squeak 6.0 included:**
+[**Linux**](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-linux-x64.tar.gz) ·
+[**Windows**](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-windows-x64.zip) ·
+[**macOS**](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-macos.zip)
+(how to start it: [below](#download-and-play))
+
 ![Two fish and the control panel of the Aquarium, in Squeak 6.0: the yellow fish grown to twice its size, the blue one shrunk and turned](screenshot.png)
 
 A small [Squeak](https://squeak.org) Smalltalk game, written in 2007 to show
