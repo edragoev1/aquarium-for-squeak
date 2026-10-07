@@ -3,7 +3,9 @@
 The latest code, of the Subversion commit of 30 March 2008 (the last edit 10 March 2007),
 salvaged on 7 October 2026: the classes Fish and ControlPanel, with two changes for Squeak 5,
 which work in Squeak 3.9 too: borderWidth: and borderColor: in place of setBorderWidth:borderColor:,
-and Fish>>color: answering before the fish has its morph, as Squeak 5 sends color: from initialize.
+Fish>>color: answering before the fish has its morph, as Squeak 5 sends color: from initialize,
+and Fish>>indicateKeyboardFocus answering false, so that Squeak 5 and later draw no frame round
+the blue fish, which has the keyboard focus.
 
 Start it with: ControlPanel new. It needs mcmFish.morph in the folder of the image."!
 
@@ -211,6 +213,12 @@ initialize: morphFile
 				true.
 		] whileTrue.
 	] forkAt: Processor userInterruptPriority.! !
+
+!Fish methodsFor: 'as yet unclassified' stamp: 'ed 10/7/2026 13:50'!
+indicateKeyboardFocus
+	"No frame round the fish that has the keyboard focus, as Squeak 5 and later
+	draw round the morph with the focus when this answers true"
+	^ false! !
 
 !ControlPanel methodsFor: 'nil' stamp: 'ed 2/1/2007 17:41'!
 fish1

@@ -49,9 +49,9 @@ rm $L/shared/$SQUEAK.image $L/shared/$SQUEAK.changes
 cp image/Aquarium.image image/Aquarium.changes $L/shared/
 cp ../LICENSE $L/LICENSE.txt
 chmod 644 $L/LICENSE.txt $L/README.txt 2>/dev/null || true
-{ cat $README; printf '\nLinux: run ./Aquarium.sh.\n'; } > $L/README.txt
-printf '#!/bin/bash\n# Starts the Aquarium in the Squeak 6.0 of this folder.\ncd "$(dirname "$(readlink -f "$0")")" || exit 1\nexec ./squeak.sh "$PWD/shared/Aquarium.image"\n' > $L/Aquarium.sh
-chmod +x $L/Aquarium.sh
+{ cat $README; printf '\nLinux: run ./aquarium.sh.\n'; } > $L/README.txt
+printf '#!/bin/bash\n# Starts the Aquarium in the Squeak 6.0 of this folder.\ncd "$(dirname "$(readlink -f "$0")")" || exit 1\nexec ./squeak.sh "$PWD/shared/Aquarium.image"\n' > $L/aquarium.sh
+chmod +x $L/aquarium.sh
 tar -czf $L.tar.gz $L
 
 W=aquarium-for-squeak-$VERSION-windows-x64

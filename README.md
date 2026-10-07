@@ -16,7 +16,7 @@ your system (not GitHub's *Code → Download ZIP*, which is only the source):
 
 | System | Download | Start |
 |---|---|---|
-| Linux (x86-64) | [aquarium-for-squeak-1.0-linux-x64.tar.gz](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-linux-x64.tar.gz) (28 MB) | `./Aquarium.sh` |
+| Linux (x86-64) | [aquarium-for-squeak-1.0-linux-x64.tar.gz](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-linux-x64.tar.gz) (28 MB) | `./aquarium.sh` |
 | Windows (x86-64) | [aquarium-for-squeak-1.0-windows-x64.zip](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-windows-x64.zip) (26 MB) | double-click `Aquarium.bat` |
 | macOS (Intel and Apple silicon) | [aquarium-for-squeak-1.0-macos.zip](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-macos.zip) (62 MB) | drag `Aquarium.image` onto `Squeak.app`, or double-click `Aquarium.command` |
 
@@ -25,7 +25,7 @@ On Linux, from a terminal:
 ```sh
 curl -LO https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-linux-x64.tar.gz
 tar -xzf aquarium-for-squeak-1.0-linux-x64.tar.gz
-cd aquarium-for-squeak-1.0-linux-x64 && ./Aquarium.sh
+cd aquarium-for-squeak-1.0-linux-x64 && ./aquarium.sh
 ```
 
 The Linux package is tested; the Windows and macOS packages are built the
@@ -94,10 +94,13 @@ to Squeak 6.0. The code was in zips of 2007 and 2008, a Subversion working
 copy, and the `.changes` files of the Squeak images, where Squeak writes every
 method as it is saved; the methods of all of them were read and compared, and
 the newest, of the commit of 30 March 2008 (last edited 10 March 2007), kept.
-Two small changes were needed for Squeak 5 and 6, which work in Squeak 3.9
+Three small changes were needed for Squeak 5 and 6, which work in Squeak 3.9
 too: `borderWidth:` and `borderColor:` in place of the deprecated
-`setBorderWidth:borderColor:`, and `Fish>>color:` answering before the fish has
-its morph, as Squeak 5 sends `color:` from `initialize`.
+`setBorderWidth:borderColor:`; `Fish>>color:` answering before the fish has
+its morph, as Squeak 5 sends `color:` from `initialize`; and
+`Fish>>indicateKeyboardFocus` answering `false`, so that the blue fish, which
+has the keyboard focus, is drawn without the frame Squeak 5 and later put
+round the focus.
 
 The salvage, the upgrade to Squeak 6.0 and the packages were done by
 [Claude](https://claude.com/claude-code), Anthropic's AI model, with Evgeni
