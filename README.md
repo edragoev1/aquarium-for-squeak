@@ -94,13 +94,15 @@ to Squeak 6.0. The code was in zips of 2007 and 2008, a Subversion working
 copy, and the `.changes` files of the Squeak images, where Squeak writes every
 method as it is saved; the methods of all of them were read and compared, and
 the newest, of the commit of 30 March 2008 (last edited 10 March 2007), kept.
-Three small changes were needed for Squeak 5 and 6, which work in Squeak 3.9
+Four small changes were needed for Squeak 5 and 6, which work in Squeak 3.9
 too: `borderWidth:` and `borderColor:` in place of the deprecated
 `setBorderWidth:borderColor:`; `Fish>>color:` answering before the fish has
 its morph, as Squeak 5 sends `color:` from `initialize`; and
 `Fish>>indicateKeyboardFocus` answering `false`, so that the blue fish, which
 has the keyboard focus, is drawn without the frame Squeak 5 and later put
-round the focus.
+round the focus; and the control panel put at `0@0` before its buttons are
+placed, as Squeak 5 and later open it below their menu bar, which pushed the
+top row of buttons out of the panel.
 
 The salvage, the upgrade to Squeak 6.0 and the packages were done by
 [Claude](https://claude.com/claude-code), Anthropic's AI model, with Evgeni

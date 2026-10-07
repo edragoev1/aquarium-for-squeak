@@ -4,8 +4,9 @@ The latest code, of the Subversion commit of 30 March 2008 (the last edit 10 Mar
 salvaged on 7 October 2026: the classes Fish and ControlPanel, with two changes for Squeak 5,
 which work in Squeak 3.9 too: borderWidth: and borderColor: in place of setBorderWidth:borderColor:,
 Fish>>color: answering before the fish has its morph, as Squeak 5 sends color: from initialize,
-and Fish>>indicateKeyboardFocus answering false, so that Squeak 5 and later draw no frame round
-the blue fish, which has the keyboard focus.
+Fish>>indicateKeyboardFocus answering false, so that Squeak 5 and later draw no frame round
+the blue fish, which has the keyboard focus, and the control panel put at 0@0 before its buttons,
+which are placed from there, as Squeak 5 and later open it below their menu bar.
 
 Start it with: ControlPanel new. It needs mcmFish.morph in the folder of the image."!
 
@@ -232,6 +233,9 @@ fish2
 initialize
 	" ScreenController new fullScreenOn. "
 	panel := RectangleMorph new openInWorld.
+	"The buttons below are placed as if the panel were at 0@0, as it opened in
+	Squeak 3.9; Squeak 5 and later open it below their menu bar"
+	panel position: 0@0.
 	panel color: ((Color palePeach) alpha: 0.5).
 	panel extent: 430@115.
 	panel useRoundedCorners.
