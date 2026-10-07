@@ -11,14 +11,22 @@ it left, **k** flips it, **l** turns it right.
 
 ## Download and play
 
-Squeak 6.0 is included; nothing else to install. From the
-[latest release](https://github.com/edragoev1/aquarium-for-squeak/releases/latest):
+Squeak 6.0 is included; nothing else to install. Download the package of
+your system (not GitHub's *Code → Download ZIP*, which is only the source):
 
 | System | Download | Start |
 |---|---|---|
-| Linux (x86-64) | `aquarium-for-squeak-1.0-linux-x64.tar.gz` | `./Aquarium.sh` |
-| Windows (x86-64) | `aquarium-for-squeak-1.0-windows-x64.zip` | double-click `Aquarium.bat` |
-| macOS (Intel and Apple silicon) | `aquarium-for-squeak-1.0-macos.zip` | drag `Aquarium.image` onto `Squeak.app`, or double-click `Aquarium.command` |
+| Linux (x86-64) | [aquarium-for-squeak-1.0-linux-x64.tar.gz](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-linux-x64.tar.gz) (28 MB) | `./Aquarium.sh` |
+| Windows (x86-64) | [aquarium-for-squeak-1.0-windows-x64.zip](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-windows-x64.zip) (26 MB) | double-click `Aquarium.bat` |
+| macOS (Intel and Apple silicon) | [aquarium-for-squeak-1.0-macos.zip](https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-macos.zip) (62 MB) | drag `Aquarium.image` onto `Squeak.app`, or double-click `Aquarium.command` |
+
+On Linux, from a terminal:
+
+```sh
+curl -LO https://github.com/edragoev1/aquarium-for-squeak/releases/latest/download/aquarium-for-squeak-1.0-linux-x64.tar.gz
+tar -xzf aquarium-for-squeak-1.0-linux-x64.tar.gz
+cd aquarium-for-squeak-1.0-linux-x64 && ./Aquarium.sh
+```
 
 The Linux package is tested; the Windows and macOS packages are built the
 same way from Squeak's own downloads, but have not yet been tried on those
